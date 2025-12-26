@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>MEDTECH | ICT, Innovation & Coding Platform</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body{
+  margin:0;
+  font-family:Arial, sans-serif;
+  background:#0b1020;
+  color:#ffffff;
+}
+header{
+  background:#111833;
+  padding:20px;
+  text-align:center;
+}
+header h1{
+  margin:0;
+  font-size:32px;
+  color:#00eaff;
+}
+header p{
+  color:#cbd5ff;
+}
+
+nav{
+  display:flex;
+  justify-content:center;
+  gap:15px;
+  flex-wrap:wrap;
+  background:#141a2b;
+  padding:10px;
+}
+nav a{
+  color:white;
+  text-decoration:none;
+  padding:8px 14px;
+  border-radius:6px;
+  background:#1e2440;
+}
+nav a:hover{
+  background:#00eaff;
+  color:black;
+}
+
+section{
+  padding:30px;
+  max-width:1100px;
+  margin:auto;
+}
+.section-title{
+  font-size:26px;
+  margin-bottom:15px;
+  color:#00eaff;
+}
+
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+}
+.card{
+  background:#151b3d;
+  border-radius:12px;
+  overflow:hidden;
+  box-shadow:0 0 10px rgba(0,0,0,0.4);
+}
+.card img{
+  width:100%;
+  height:160px;
+  object-fit:cover;
+}
+.card div{
+  padding:15px;
+}
+.card h3{
+  margin-top:0;
+  color:#00eaff;
+}
+.card a{
+  display:inline-block;
+  margin-top:10px;
+  color:#00ff99;
+  text-decoration:none;
+}
+
+footer{
+  background:#0a0f25;
+  padding:15px;
+  text-align:center;
+  color:#9aa4ff;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>MEDTECH</h1>
+<p>Innovating ICT • Coding the Future • Connecting Technology</p>
+</header>
+
+<nav>
+<a href="#login">Login</a>
+  <a href="#ict">ICT</a>
+<a href="#innovation">Innovation</a>
+<a href="#coding">Coding</a>
+<a href="#communication">Communication</a>
+<a href="#tech">New Technologies</a>
+<a href="#freelance">Freelancing</a>
+</nav>
+  <button id="aiBtn">🤖</button>
+
+<style>
+#aiBtn{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  background:#00eaff;
+  color:black;
+  border:none;
+  border-radius:50%;
+  width:60px;
+  height:60px;
+  font-size:24px;
+  cursor:pointer;
+  box-shadow:0 0 15px #00eaff;
+}
+</style>
+
+<!-- ICT SECTION -->
+<section id="ict">
+<h2 class="section-title">📡 Information & Communication Technology (ICT)</h2>
+<div class="cards">
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1581090700227-1e37b190418e" alt="ICT">
+    <div>
+      <h3>ICT Resources</h3>
+      <p>Learn networking, digital systems, data management, and modern ICT tools.</p>
+      <a href="https://www.coursera.org/browse/information-technology" target="_blank">Explore ICT</a>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- INNOVATION -->
+<section id="innovation">
+<h2 class="section-title">💡 Innovation & Tech Ideas</h2>
+<div class="cards">
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d" alt="Innovation">
+    <div>
+      <h3>Creative Innovation</h3>
+      <p>Discover startups, problem-solving ideas, AI innovation, and digital transformation.</p>
+      <a href="https://www.techcrunch.com" target="_blank">Tech News</a>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- CODING -->
+<section id="coding">
+<h2 class="section-title">💻 Coding & Development</h2>
+<div class="cards">
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97" alt="Coding">
+    <div>
+      <h3>Learn to Code</h3>
+      <p>HTML, CSS, JavaScript, Python, Android & Web Development.</p>
+      <a href="https://www.freecodecamp.org" target="_blank">Start Coding</a>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- COMMUNICATION -->
+<section id="communication">
+<h2 class="section-title">🌐 Communication Platform</h2>
+<div class="cards">
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c" alt="Communication">
+    <div>
+      <h3>Connect & Collaborate</h3>
+      <p>Chat, share ideas, collaborate on projects, and build communities.</p>
+      <a href="https://discord.com" target="_blank">Join Communities</a>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- NEW TECHNOLOGIES -->
+<section id="tech">
+<h2 class="section-title">🚀 New & Emerging Technologies</h2>
+<div class="cards">
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1535223289827-42f1e9919769" alt="AI">
+    <div>
+      <h3>Latest Technologies</h3>
+      <p>AI, Robotics, Blockchain, Web3, Cloud Computing & Cybersecurity.</p>
+      <a href="https://www.futurepedia.io" target="_blank">Explore Tech</a>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- FREELANCING -->
+<section id="freelance">
+<h2 class="section-title">🧑‍💼 Freelancing & Lancing Hub</h2>
+<div class="cards">
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d" alt="Freelancing">
+    <div>
+      <h3>Work & Earn</h3>
+      <p>Access freelancing platforms, offer services, and earn using your tech skills.</p>
+      <a href="https://www.fiverr.com" target="_blank">Fiverr</a><br>
+      <a href="https://www.upwork.com" target="_blank">Upwork</a>
+    </div>
+  </div>
+</div>
+</section>
+  <!-- MONETIZATION SECTION -->
+<section id="monetization">
+<h2 class="section-title">💰 Monetization & Earnings</h2>
+
+<div class="cards">
+
+  <!-- ADS -->
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1556742044-3c52d6e88c62" alt="Ads">
+    <div>
+      <h3>Website Ads</h3>
+      <p>Earn money when users visit MEDTECH using Google AdSense and banner ads.</p>
+      <a href="https://www.google.com/adsense/start/" target="_blank">Enable Ads</a>
+    </div>
+  </div>
+
+  <!-- PREMIUM -->
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1556740738-b6a63e27c4df" alt="Premium">
+    <div>
+      <h3>Premium Membership</h3>
+      <p>Users pay for premium coding tutorials, tools, mentorship & exclusive content.</p>
+      <a href="#">Coming Soon</a>
+    </div>
+  </div>
+
+  <!-- AFFILIATE -->
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1605902711622-cfb43c44367f" alt="Affiliate">
+    <div>
+      <h3>Affiliate Marketing</h3>
+      <p>Earn commissions by promoting tech tools, courses & platforms.</p>
+      <a href="https://affiliate-program.amazon.com/" target="_blank">Amazon Affiliate</a><br>
+      <a href="https://www.coursera.org/affiliate" target="_blank">Coursera Affiliate</a>
+    </div>
+  </div>
+
+  <!-- FREELANCE COMMISSION -->
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f" alt="Commission">
+    <div>
+      <h3>Freelancing Commission</h3>
+      <p>MEDTECH earns a percentage from jobs completed through the platform.</p>
+      <a href="#freelance">View Freelance Hub</a>
+    </div>
+  </div>
+
+</div>
+</section>
+  <section id="login">
+<h2 class="section-title">🔐 Login / Sign Up</h2>
+
+<div class="card" style="max-width:400px;margin:auto;">
+  <div style="padding:20px;">
+    
+    <h3 id="formTitle">Login</h3>
+
+    <input id="username" placeholder="Username" style="width:100%;padding:10px;margin-bottom:10px;">
+    <input id="password" type="password" placeholder="Password" style="width:100%;padding:10px;margin-bottom:10px;">
+
+    <button onclick="login()" style="width:100%;padding:10px;background:#00eaff;border:none;border-radius:6px;">
+      Login
+    </button>
+
+    <p style="text-align:center;margin-top:10px;">
+      <span onclick="toggleForm()" style="color:#00ff99;cursor:pointer;">
+        No account? Sign up
+      </span>
+    </p>
+
+    <p id="message" style="color:#ff8080;text-align:center;"></p>
+  </div>
+</div>
+
+<div id="welcomeBox" style="display:none;text-align:center;">
+  <h3>Welcome, <span id="userNameDisplay"></span> 👋</h3>
+  <button onclick="logout()" style="padding:10px 20px;">Logout</button>
+</div>
+
+</section>
+  <div id="aiBox">
+  <div id="aiHeader">MEDTECH AI Assistant</div>
+  <div id="aiMessages"></div>
+
+  <input id="aiInput" placeholder="Ask about coding, ICT, freelancing..." />
+  <button onclick="sendAI()">Send</button>
+</div>
+
+<style>
+#aiBox{
+  position:fixed;
+  bottom:90px;
+  right:20px;
+  width:300px;
+  background:#111833;
+  border-radius:12px;
+  display:none;
+  overflow:hidden;
+  box-shadow:0 0 20px black;
+}
+#aiHeader{
+  background:#00eaff;
+  color:black;
+  padding:10px;
+  text-align:center;
+  font-weight:bold;
+}
+#aiMessages{
+  padding:10px;
+  height:200px;
+  overflow-y:auto;
+  font-size:14px;
+}
+#aiInput{
+  width:70%;
+  padding:8px;
+  border:none;
+}
+#aiBox button{
+  width:30%;
+  border:none;
+  background:#00eaff;
+}
+</style>
+
+<footer>
+<p>© 2025 MEDTECH | Empowering Technology & Innovation</p>
+</footer>
+
+</body>
+</html>
+<script>
+const aiBtn = document.getElementById("aiBtn");
+const aiBox = document.getElementById("aiBox");
+
+aiBtn.onclick = () => {
+  aiBox.style.display = aiBox.style.display === "block" ? "none" : "block";
+};
+
+function sendAI(){
+  const input = document.getElementById("aiInput");
+  const msgBox = document.getElementById("aiMessages");
+  const userText = input.value.toLowerCase();
+
+  if(!userText) return;
+
+  msgBox.innerHTML += `<p><b>You:</b> ${input.value}</p>`;
+
+  let reply = "I'm here to help you learn technology and grow your skills.";
+
+  if(userText.includes("coding")){
+    reply = "Start with HTML, CSS, then JavaScript. Practice daily using MEDTECH coding resources.";
+  }
+  else if(userText.includes("ict")){
+    reply = "ICT includes networking, data communication, and digital systems. Check the ICT section above.";
+  }
+  else if(userText.includes("freelance") || userText.includes("money")){
+    reply = "Learn one skill well, build projects, then start freelancing on Fiverr or Upwork.";
+  }
+  else if(userText.includes("ai")){
+    reply = "AI is the future. Learn basics like machine learning, then tools like ChatGPT and automation.";
+  }
+  else if(userText.includes("help")){
+    reply = "Tell me what you want to learn today: coding, ICT, innovation, or freelancing.";
+  }
+
+  setTimeout(()=>{
+    msgBox.innerHTML += `<p style="color:#00ff99;"><b>AI:</b> ${reply}</p>`;
+    msgBox.scrollTop = msgBox.scrollHeight;
+  },500);
+
+  input.value = "";
+}
+</script>
