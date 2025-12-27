@@ -29,7 +29,7 @@ header p{
 nav{
   display:flex;
   justify-content:center;
-  gap:16px;
+  gap:15px;
   flex-wrap:wrap;
   background:#141a2b;
   padding:10px;
@@ -48,7 +48,7 @@ nav a:hover{
 
 section{
   padding:30px;
-  max-width:1100px;
+  max-width:2200px;
   margin:auto;
 }
 .section-title{
@@ -69,8 +69,8 @@ section{
 
 .cards{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:20px;
+  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  gap:15px;
 }
 .card{
   background:#151b3d;
@@ -99,13 +99,13 @@ section{
 
 footer{
   background:#0a0f25;
-  padding:15px;
+  padding:0px;
   text-align:center;
   color:#9aa4ff;
 }
   .slider{
   max-width:100%;
-  height:300px;
+  height:400px;
   position:relative;
   overflow:hidden;
   margin:20px auto;
@@ -124,6 +124,191 @@ footer{
 .slide.active{
   opacity:1;
 }
+  .code-lab{
+  background:#111833;
+  padding:20px;
+  border-radius:12px;
+  margin-top:15px;
+}
+
+.code-lab textarea{
+  width:100%;
+  height:220px;
+  background:#0b1020;
+  color:#00ff99;
+  border:1px solid #1e2440;
+  padding:10px;
+  border-radius:8px;
+  font-family:monospace;
+  margin-bottom:10px;
+  width:90%
+}
+
+.code-lab button{
+  background:#00eaff;
+  color:black;
+  padding:10px 20px;
+  border:none;
+  border-radius:6px;
+  cursor:pointer;
+  margin-bottom:10px;
+}
+
+.code-lab iframe{
+  width:100%;
+  height:220px;
+  background:white;
+  border:none;
+  border-radius:8px;
+}
+  .studio{
+  background:#111833;
+  padding:20px;
+  border-radius:14px;
+  margin-top:20px;
+}
+
+.tabs button{
+  background:#1e2440;
+  color:white;
+  border:none;
+  padding:8px 14px;
+  margin-right:5px;
+  border-radius:6px;
+  cursor:pointer;
+}
+
+.editor{
+  width:100%;
+  height:180px;
+  background:#0b1020;
+  color:#00ff99;
+  border:1px solid #1e2440;
+  padding:10px;
+  border-radius:8px;
+  font-family:monospace;
+  margin-top:10px;
+}
+
+.hidden{ display:none; }
+
+.controls{
+  margin:10px 0;
+}
+.controls button{
+  background:#00eaff;
+  border:none;
+  padding:8px 14px;
+  border-radius:6px;
+  cursor:pointer;
+  margin-right:5px;
+}
+
+iframe{
+  width:100%;
+  height:260px;
+  border:none;
+  background:white;
+  border-radius:8px;
+}
+
+.tips{
+  margin-top:10px;
+  color:#00ff99;
+}
+
+.challenges{
+  margin-top:15px;
+  background:#0b1020;
+  padding:10px;
+  border-radius:8px;
+}
+  .top-nav{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:12px;
+  background:#141a2b;
+}
+.top-nav button{
+  background:#00eaff;
+  border:none;
+  padding:6px 12px;
+  border-radius:6px;
+}
+  .modal{
+  position:fixed;
+  top:0;left:0;
+  width:100%;height:100%;
+  background:rgba(0,0,0,0.7);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+.modal-box{
+  background:#111833;
+  padding:20px;
+  border-radius:10px;
+}
+.modal-box input{
+  width:100%;
+  padding:8px;
+  margin:10px 0;
+}
+  #profile{
+  background:#111833;
+  padding:20px;
+  border-radius:12px;
+}
+.badges span{
+  background:#0b1020;
+  padding:6px 10px;
+  border-radius:6px;
+  margin-right:6px;
+  display:inline-block;
+}
+  .project-card{
+  background:#0b1020;
+  padding:12px;
+  margin:10px 0;
+  border-radius:8px;
+}
+.project-card button{
+  background:#00ff99;
+  border:none;
+  padding:6px 12px;
+}
+  #aibox{
+  position:fixed;
+  bottom:90px;
+  right:20px;
+  width:50%;
+  background:#111833;
+  border-radius:12px;
+  display:none;
+    overflow:hidden;
+  box-shadow:0 0 20px black;
+}
+#aiHeader{
+  background:#00eaff;
+  color:black;
+  padding:10px;
+  text-align:center;
+  font-weight:bold;
+}
+#aiMessages{
+  padding:0px;
+  height:200px;
+  overflow-y:auto;
+  font-size:14px;
+}
+#aiInput{
+  width:70%;
+  padding:0px;
+  border:none;
+  height:20px
+}
+   
 </style>
 </head>
 
@@ -133,13 +318,15 @@ footer{
 <h1>MEDTECH</h1>
 <p>Innovating ICT • Coding the Future • Connecting Technology</p>
 </header>
+  
+
   <div class="slider">
-  <img src="slide1.jpg" class="slide active" alt="Technology">
-  <img src="slide2.jpg" class="slide" alt="Coding">
-  <img src="slide3.jpg" class="slide" alt="Innovation">
-  <img src="slide4.png" class="slide" alt="medtech">
-  <img src="slide5.png" class="slide" alt="Innovation">
-  <img src="slide6.png" class="slide" alt="medtech">
+  <img src="images/slide1.jpg" class="slide active" alt="Technology">
+  <img src="images/slide2.jpg" class="slide" alt="Coding">
+  <img src="images/slide3.jpg" class="slide" alt="Innovation">
+  <img src="images/slide4.png" class="slide" alt="medtech">
+  <img src="images/slide5.png" class="slide" alt="Innovation">
+  <img src="images/slide6.png" class="slide" alt="medtech">
     
 </div>
   <div style="background:#1e2440;color:#00ff99;text-align:center;padding:15px;margin:10px 0;border-radius:8px;">
@@ -157,6 +344,8 @@ footer{
 </nav>
   <button id="aiBtn">🤖</button>
 <div class="ad-placeholder">🔹 Ad Placeholder 🔹</div>
+  <div id="aiBox">
+  
 <style>
 #aiBtn{
   position:fixed;
@@ -220,6 +409,79 @@ footer{
     </div>
   </div>
 </div>
+</section>
+    section id="code-studio">
+  <h2 class="section-title">🧠 MEDTECH Code Studio</h2>
+  <p>
+    A safe coding environment for learners to practice HTML, CSS, and JavaScript.
+    Build projects, experiment freely, and grow into a professional developer.
+  </p>
+
+  <div class="studio">
+
+    <!-- Tabs -->
+    <div class="tabs">
+      <button onclick="openTab('html')">HTML</button>
+      <button onclick="openTab('css')">CSS</button>
+      <button onclick="openTab('js')">JavaScript</button>
+    </div>
+
+    <!-- Editors -->
+    <textarea id="html" class="editor">
+<h2>Hello MEDTECH 👋</h2>
+<p>I am learning to code.</p>
+<button onclick="sayHi()">Click Me</button>
+    </textarea>
+
+    <textarea id="css" class="editor hidden">
+body{
+  background:#0b1020;
+  color:white;
+  font-family:Arial;
+  text-align:center;
+}
+button{
+  padding:10px 20px;
+  background:#00eaff;
+  border:none;
+  border-radius:6px;
+}
+    </textarea>
+
+    <textarea id="js" class="editor hidden">
+function sayHi(){
+  alert("Keep learning 🚀");
+}
+    </textarea>
+
+    <!-- Controls -->
+    <div class="controls">
+      <button onclick="runStudio()">▶ Run</button>
+      <button onclick="saveStudio()">💾 Save</button>
+      <button onclick="resetStudio()">♻ Reset</button>
+      <button onclick="downloadProject()">⬇ Download</button>
+    </div>
+
+    <!-- Output -->
+    <iframe id="studioOutput"></iframe>
+
+    <!-- Learning Tips -->
+    <div class="tips">
+      💡 Tip: Edit HTML for structure, CSS for design, JavaScript for actions.
+    </div>
+
+    <!-- Challenges -->
+    <div class="challenges">
+      <h3>🎯 Practice Challenges</h3>
+      <ul>
+        <li>Create a button that changes color</li>
+        <li>Center text on the page</li>
+        <li>Add an alert message</li>
+        <li>Create a mini card UI</li>
+      </ul>
+    </div>
+
+  </div>
 </section>
 
 <!-- COMMUNICATION -->
@@ -304,6 +566,8 @@ footer{
     </div>
   </div>
 
+  
+
   <!-- FREELANCE COMMISSION -->
   <div class="card">
     <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f" alt="Commission">
@@ -313,30 +577,54 @@ footer{
       <a href="#freelance">View Freelance Hub</a>
     </div>
   </div>
+  <
+  <section id="code-lab">
+  <h2 class="section-title">🧪 MEDTECH Code Practice Lab</h2>
+  <p>
+    Practice coding directly in your browser. Write HTML, CSS, or JavaScript
+    and see results instantly. This lab is designed to help learners grow
+    confidence and skills.
+  </p>
+
+  <div class="code-lab">
+
+    <textarea id="codeInput">
+<!-- Try editing this code -->
+
+
+
+<body>
+  <h2>Hello MEDTECH 👋</h2>
+  <p>I am learning to code!</p>
+  <button onclick="alert('Keep learning 🚀')">Click me</button>
+</body>
+</html>
+    </textarea>
+
+    <button onclick="runCode()">▶ Run Code</button>
+
+    <iframe id="codeOutput"></iframe>
+
+  </div>
+</section>
 
 </div>
 </section>
-  <section id="login">
-<h2 class="section-title">🔐 Login / Sign Up</h2>
+  <section id="profile" class="hidden">
+  <h2>👤 Learner Profile</h2>
+  <p><strong>Name:</strong> <span id="profileName"></span></p>
+  <p><strong>Level:</strong> Beginner</p>
 
-<div class="card" style="max-width:400px;margin:auto;">
-  <div style="padding:20px;">
-    
-    <h3 id="formTitle">Login</h3>
+  <h3>📊 Progress</h3>
+  <progress value="30" max="100"></progress>
 
-    <input id="username" placeholder="Username" style="width:100%;padding:10px;margin-bottom:10px;">
-    <input id="password" type="password" placeholder="Password" style="width:100%;padding:10px;margin-bottom:10px;">
-
-    <button onclick="login()" style="width:100%;padding:10px;background:#00eaff;border:none;border-radius:6px;">
-      Login
-    </button>
-
-    <p style="text-align:center;margin-top:10px;">
-      <span onclick="toggleForm()" style="color:#00ff99;cursor:pointer;">
-        No account? Sign up
-      </span>
-    </p>
-
+  <h3>🏅 Badges</h3>
+  <div class="badges">
+    <span>✅ First Run</span>
+    <span>🎨 Styled Page</span>
+  </div>
+</section>
+  
     <p id="message" style="color:#ff8080;text-align:center;"></p>
   </div>
 </div>
@@ -346,65 +634,19 @@ footer{
   <button onclick="logout()" style="padding:10px 20px;">Logout</button>
 </div>
 
-</section>
-  <div id="aiBox">
-  <div id="aiHeader">MEDTECH AI Assistant</div>
-  <div id="aiMessages"></div>
 
-  <input id="aiInput" placeholder="Ask about coding, ICT, freelancing..." />
-  <button onclick="sendAI()">Send</button>
-</div>
-
-<style>
-#aiBox{
-  position:fixed;
-  bottom:90px;
-  right:20px;
-  width:300px;
-  background:#111833;
-  border-radius:12px;
-  display:none;
-  overflow:hidden;
-  box-shadow:0 0 20px black;
-}
-#aiHeader{
-  background:#00eaff;
-  color:black;
-  padding:10px;
-  text-align:center;
-  font-weight:bold;
-}
-#aiMessages{
-  padding:10px;
-  height:200px;
-  overflow-y:auto;
-  font-size:14px;
-}
-#aiInput{
-  width:70%;
-  padding:8px;
-  border:none;
-}
-#aiBox button{
-  width:30%;
-  border:none;
-  background:#00eaff;
-}
-</style>
 <div style="background:#1e2440;color:#00ff99;text-align:center;padding:15px;margin:15px 0;border-radius:8px;">
   🔹 Footer Ad Placeholder 🔹
 </div>
-<footer>
-  <a href="about.html">About</a> |
-<a href="privacy.html">Privacy Policy</a> |
-<a href="terms.html">Terms of Service</a>
-<p>© 2025 MEDTECH | Empowering Technology & Innovation</p>
-</footer>
-
+    <footer>
+    <p> © 2025 MEDTECH | Empowering Technology & Innovation</p>
+  <a href="privacy.html">Privacy Policy</a> |
+<a href="terms.html">Terms of Service</a> |
+<a href="about.html">About</a>
+  </footer>
 </body>
 </html>
 <script>
-
 let slides = document.querySelectorAll(".slide");
 let current = 0;
 
@@ -416,6 +658,63 @@ function showSlide(){
 
 setInterval(showSlide, 3000);
 
+function runCode(){
+  const code = document.getElementById("codeInput").value;
+  const output = document.getElementById("codeOutput");
+
+  output.srcdoc = code;
+}
+
+let activeTab = "html";
+
+function openTab(tab){
+  document.querySelectorAll(".editor").forEach(e => e.classList.add("hidden"));
+  document.getElementById(tab).classList.remove("hidden");
+  activeTab = tab;
+}
+
+function runStudio(){
+  const html = document.getElementById("html").value;
+  const css = `<style>${document.getElementById("css").value}</style>`;
+  const js = `<script>${document.getElementById("js").value}<\/script>`;
+  document.getElementById("studioOutput").srcdoc = html + css + js;
+}
+
+function saveStudio(){
+  localStorage.setItem("medtech-html", html.value);
+  localStorage.setItem("medtech-css", css.value);
+  localStorage.setItem("medtech-js", js.value);
+  alert("Code saved ✔");
+}
+
+function resetStudio(){
+  location.reload();
+}
+
+function downloadProject(){
+  const content =
+    document.getElementById("html").value +
+    "\n<style>\n" +
+    document.getElementById("css").value +
+    "\n</style>\n<script>\n" +
+    document.getElementById("js").value +
+    "\n<script>";
+
+  const blob = new Blob([content], {type:"text/html"});
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.download = "medtech-project.html";
+  a.click();
+}
+
+window.onload = () => {
+  if(localStorage.getItem("medtech-html")){
+    html.value = localStorage.getItem("medtech-html");
+    css.value = localStorage.getItem("medtech-css");
+    js.value = localStorage.getItem("medtech-js");
+  }
+}
+    
 const aiBtn = document.getElementById("aiBtn");
 const aiBox = document.getElementById("aiBox");
 
@@ -457,5 +756,8 @@ function sendAI(){
 
   input.value = "";
 }
-  </script>
+
+
+
+</script>
         
