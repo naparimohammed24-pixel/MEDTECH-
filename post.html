@@ -21,21 +21,21 @@ const slug = new URLSearchParams(window.location.search).get("slug");
 const SPACE_ID = "YOUR_SPACE_ID";
 const ACCESS_TOKEN = "YOUR_ACCESS_TOKEN";
 
-fetch(
-  `https://cdn.contentful.com/spaces/${SPACE_ID}/entries` +
-  `?content_type=blogPost&fields.slug=${slug}&access_token=${ACCESS_TOKEN}`
-)
-.then(res => res.json())
-.then(data => {
-  const post = data.items[0].fields;
-  document.getElementById("title").innerText = post.title;
 
-  // Simple rich text rendering
-  document.getElementById("content").innerHTML =
-    post.content.content
-      .map(block => block.content?.[0]?.value || "")
-      .join("<br><br>");
-});
+const slug = new URLSearchParams(window.location.search).get("slug");
+
+fetch(`/api/post?slug=${slug}`)
+  .then(res => res.json())
+  .then(data => {
+    const post = data.items[0].fields;
+
+    document.getElementById("title").innerText = post.title;
+
+    document.getElementById("content").innerHTML =
+      post.content.content
+        .map(b => b.content?.[0]?.value || "")
+        .join("<br><br>");
+  });
 </script>
 
 </body>
