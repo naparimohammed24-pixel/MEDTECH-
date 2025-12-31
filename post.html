@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Blog Post</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body { background:#0b1020; color:white; font-family:Arial; padding:20px }
+    img { max-width:100%; border-radius:8px }
+  </style>
+</head>
+<body>
+
+<a href="blog.html">← Back to blog</a>
+<h1 id="title"></h1>
+<div id="content">Loading...</div>
+
+<script>
+const slug = new URLSearchParams(window.location.search).get("slug");
+
+const SPACE_ID = "YOUR_SPACE_ID";
+const ACCESS_TOKEN = "YOUR_ACCESS_TOKEN";
+
+fetch(
+  `https://cdn.contentful.com/spaces/${SPACE_ID}/entries` +
+  `?content_type=blogPost&fields.slug=${slug}&access_token=${ACCESS_TOKEN}`
+)
+.then(res => res.json())
+.then(data => {
+  const post = data.items[0].fields;
+  document.getElementById("title").innerText = post.title;
+
+  // Simple rich text rendering
+  document.getElementById("content").innerHTML =
+    post.content.content
+      .map(block => block.content?.[0]?.value || "")
+      .join("<br><br>");
+});
+</script>
+
+</body>
+</html>
