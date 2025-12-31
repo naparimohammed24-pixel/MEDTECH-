@@ -411,6 +411,7 @@ iframe{
     </div>
   </div>
 </div>
+  <div id="posts"></div>
 </section>
     section id="code-studio">
   <h2 class="section-title">🧠 MEDTECH Code Studio</h2>
@@ -758,7 +759,22 @@ function sendAI(){
 
   input.value = "";
 }
+const SPACE_ID = "wh2jduuotak5";
+const ACCESS_TOKEN = "-LgprZeoLtz64wCTTjVdFx1RrWA5C11ZtEk4UdrNW7g";
 
+fetch(`https://cdn.contentful.com/spaces/${SPACE_ID}/environments/master/entries?access_token=${ACCESS_TOKEN}`)
+  .then(res => res.json())
+  .then(data => {
+    const container = document.getElementById("posts");
+
+    data.items.forEach(item => {
+      if (item.fields.title) {
+        const post = document.createElement("div");
+        post.innerHTML = `<h2>${item.fields.title}</h2>`;
+        container.appendChild(post);
+      }
+    });
+  });
 
 
 </script>
