@@ -17,8 +17,32 @@
 <div id="posts">Loading posts...</div>
 
 <script>
-const SPACE_ID = "YOUR_SPACE_ID";
-const ACCESS_TOKEN = "YOUR_ACCESS_TOKEN";
+
+fetch("/api/blog")
+  .then(res => res.json())
+  .then(data => {
+    const posts = document.getElementById("posts");
+    posts.innerHTML = "";
+
+    data.items.forEach(item => {
+      const title = item.fields.title;
+      const slug = item.fields.slug;
+
+      posts.innerHTML += `
+        <div class="post">
+          <h2>
+            <a href="post.html?slug=${slug}">
+              ${title}
+            </a>
+          </h2>
+        </div>
+      `;
+    });
+  })
+  .catch(() => {
+    document.getElementById("posts").innerText = "Failed to load posts";
+  });
+
 
 fetch(
   `https://cdn.contentful.com/spaces/${SPACE_ID}/entries` +
