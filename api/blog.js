@@ -4,7 +4,7 @@ export default async function handler(req, res) {
 
   const url =
     `https://cdn.contentful.com/spaces/${SPACE_ID}/entries` +
-    `?content_type=blogPost&order=-fields.publishDate`;
+    `?content_type=blogPost`;
 
   try {
     const response = await fetch(url, {
