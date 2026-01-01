@@ -1,907 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>MEDTECH | ICT, Innovation & Coding Platform</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<style>
-body{
-  margin:0;
-  font-family:Arial, sans-serif;
-  background:#0b1020;
-  color:#ffffff;
-}
-header{
-  background:#111833;
-  padding:20px;
-  text-align:center;
-}
-header h1{
-  margin:0;
-  font-size:32px;
-  color:#00eaff;
-}
-header p{
-  color:#cbd5ff;
-}
-
-nav{
-  display:flex;
-  justify-content:center;
-  gap:15px;
-  flex-wrap:wrap;
-  background:#141a2b;
-  padding:10px;
-}
-nav a{
-  color:white;
-  text-decoration:none;
-  padding:8px 14px;
-  border-radius:6px;
-  background:#1e2440;
-}
-nav a:hover{
-  background:#00eaff;
-  color:black;
-}
-
-section{
-  padding:30px;
-  max-width:2200px;
-  margin:auto;
-}
-.section-title{
-  font-size:26px;
-  margin-bottom:15px;
-  color:#00eaff;
-}
-  .ad-placeholder{
-  background:#1e2440;
-  color:#00ff99;
-  text-align:center;
-  padding:15px;
-  margin:20px 0;
-  border-radius:8px;
-  font-weight:bold;
-  font-size:14px;
-}
-
-.cards{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-  gap:15px;
-}
-.card{
-  background:#151b3d;
-  border-radius:12px;
-  overflow:hidden;
-  box-shadow:0 0 10px rgba(0,0,0,0.4);
-}
-.card img{
-  width:100%;
-  height:160px;
-  object-fit:cover;
-}
-.card div{
-  padding:15px;
-}
-.card h3{
-  margin-top:0;
-  color:#00eaff;
-}
-.card a{
-  display:inline-block;
-  margin-top:10px;
-  color:#00ff99;
-  text-decoration:none;
-}
-
-footer{
-  background:#0a0f25;
-  padding:0px;
-  text-align:center;
-  color:#9aa4ff;
-}
-  .slider{
-  max-width:100%;
-  height:400px;
-  position:relative;
-  overflow:hidden;
-  margin:20px auto;
-  border-radius:12px;
-}
-
-.slide{
-  width:100%;
-  height:300px;
-  object-fit:cover;
-  position:absolute;
-  opacity:0;
-  transition:opacity 1s ease-in-out;
-}
-
-.slide.active{
-  opacity:1;
-}
-  .code-lab{
-  background:#111833;
-  padding:20px;
-  border-radius:12px;
-  margin-top:15px;
-}
-
-.code-lab textarea{
-  width:100%;
-  height:220px;
-  background:#0b1020;
-  color:#00ff99;
-  border:1px solid #1e2440;
-  padding:10px;
-  border-radius:8px;
-  font-family:monospace;
-  margin-bottom:10px;
-  width:90%
-}
-
-.code-lab button{
-  background:#00eaff;
-  color:black;
-  padding:10px 20px;
-  border:none;
-  border-radius:6px;
-  cursor:pointer;
-  margin-bottom:10px;
-}
-
-.code-lab iframe{
-  width:100%;
-  height:220px;
-  background:white;
-  border:none;
-  border-radius:8px;
-}
-  .studio{
-  background:#111833;
-  padding:20px;
-  border-radius:14px;
-  margin-top:20px;
-}
-
-.tabs button{
-  background:#1e2440;
-  color:white;
-  border:none;
-  padding:8px 14px;
-  margin-right:5px;
-  border-radius:6px;
-  cursor:pointer;
-}
-
-.editor{
-  width:100%;
-  height:180px;
-  background:#0b1020;
-  color:#00ff99;
-  border:1px solid #1e2440;
-  padding:10px;
-  border-radius:8px;
-  font-family:monospace;
-  margin-top:10px;
-}
-
-.hidden{ display:none; }
-
-.controls{
-  margin:10px 0;
-}
-.controls button{
-  background:#00eaff;
-  border:none;
-  padding:8px 14px;
-  border-radius:6px;
-  cursor:pointer;
-  margin-right:5px;
-}
-
-iframe{
-  width:100%;
-  height:260px;
-  border:none;
-  background:white;
-  border-radius:8px;
-}
-
-.tips{
-  margin-top:10px;
-  color:#00ff99;
-}
-
-.challenges{
-  margin-top:15px;
-  background:#0b1020;
-  padding:10px;
-  border-radius:8px;
-}
-  .top-nav{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:12px;
-  background:#141a2b;
-}
-.top-nav button{
-  background:#00eaff;
-  border:none;
-  padding:6px 12px;
-  border-radius:6px;
-}
-  .modal{
-  position:fixed;
-  top:0;left:0;
-  width:100%;height:100%;
-  background:rgba(0,0,0,0.7);
-  display:flex;
-  justify-content:center;
-  align-items:center;
-}
-.modal-box{
-  background:#111833;
-  padding:20px;
-  border-radius:10px;
-}
-.modal-box input{
-  width:100%;
-  padding:8px;
-  margin:10px 0;
-}
-  #profile{
-  background:#111833;
-  padding:20px;
-  border-radius:12px;
-}
-.badges span{
-  background:#0b1020;
-  padding:6px 10px;
-  border-radius:6px;
-  margin-right:6px;
-  display:inline-block;
-}
-  .project-card{
-  background:#0b1020;
-  padding:12px;
-  margin:10px 0;
-  border-radius:8px;
-}
-.project-card button{
-  background:#00ff99;
-  border:none;
-  padding:6px 12px;
-}
-  #aibox{
-  position:fixed;
-  bottom:90px;
-  right:20px;
-  width:50%;
-  background:#111833;
-  border-radius:12px;
-  display:none;
-    overflow:hidden;
-  box-shadow:0 0 20px black;
-}
-#aiHeader{
-  background:#00eaff;
-  color:black;
-  padding:10px;
-  text-align:center;
-  font-weight:bold;
-}
-#aiMessages{
-  padding:0px;
-  height:200px;
-  overflow-y:auto;
-  font-size:14px;
-}
-#aiInput{
-  width:70%;
-  padding:0px;
-  border:none;
-  height:20px
-}
-   
-</style>
+  <meta charset="UTF-8">
+  <title>MEDTECH | ICT, Innovation & Coding Platform</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
+<!-- HEADER -->
 <header>
-<h1>MEDTECH</h1>
-<p>Innovating ICT • Coding the Future • Connecting Technology</p>
+  <h1>MEDTECH</h1>
+  <p>Innovating ICT • Coding the Future • Connecting Technology</p>
 </header>
-  
 
-  <div class="slider">
+<!-- SLIDER -->
+<div class="slider">
   <img src="slide1.jpg" class="slide active" alt="Technology">
   <img src="slide2.jpg" class="slide" alt="Coding">
   <img src="slide3.jpg" class="slide" alt="Innovation">
-  <img src="slide4.png" class="slide" alt="medtech">
-  <img src="slide5.png" class="slide" alt="Innovation">
-  <img src="slide6.png" class="slide" alt="medtech">
-    
-</div>
-  <div style="background:#1e2440;color:#00ff99;text-align:center;padding:15px;margin:10px 0;border-radius:8px;">
-  🔹ads not availabe 🔹
 </div>
 
+<!-- NAVIGATION -->
 <nav>
-<a href="#login">Login</a>
   <a href="#ict">ICT</a>
-<a href="#innovation">Innovation</a>
-<a href="#coding">Coding</a>
-<a href="#communication">Communication</a>
-<a href="#tech">New Technologies</a>
-<a href="#freelance">Freelancing</a>
-  <a href="index.html">Home</a>
+  <a href="#innovation">Innovation</a>
+  <a href="#coding">Coding</a>
+  <a href="#communication">Communication</a>
+  <a href="#tech">New Technologies</a>
+  <a href="#freelance">Freelancing</a>
+  <a href="#monetization">Monetization</a>
   <a href="blog.html">Blog</a>
 </nav>
-  <button id="aiBtn">🤖</button>
-<div class="ad-placeholder">🔹 Ad Placeholder 🔹</div>
-  <div id="aiBox">
-  
-<style>
-#aiBtn{
-  position:fixed;
-  bottom:20px;
-  right:20px;
-  background:#00eaff;
-  color:black;
-  border:none;
-  border-radius:50%;
-  width:60px;
-  height:60px;
-  font-size:24px;
-  cursor:pointer;
-  box-shadow:0 0 15px #00eaff;
-}
-</style>
 
-<!-- ICT SECTION -->
+<!-- ICT -->
 <section id="ict">
-<h2 class="section-title">📡 Information & Communication Technology (ICT)</h2>
-<div class="cards">
-  <div class="card">
-    <img src="https://images.unsplash.com/photo-1581090700227-1e37b190418e" alt="ICT">
-    <div>
-      <h3>ICT Resources</h3>
-      <p>Learn networking, digital systems, data management, and modern ICT tools.</p>
-      <a href="https://www.coursera.org/browse/information-technology" target="_blank">Explore ICT</a>
-    </div>
+  <h2 class="section-title">📡 Information & Communication Technology (ICT)</h2>
+  <div class="post">
+    <p>Learn networking, digital systems, data management, and modern ICT tools.</p>
+    <a href="https://www.coursera.org/browse/information-technology" target="_blank">
+      Explore ICT Resources
+    </a>
   </div>
-</div>
 </section>
-  <div style="background:#1e2440;color:#00ff99;text-align:center;padding:15px;margin:20px 0;border-radius:8px;">
-  🔹 Sponsored / Ads not available🔹
-</div>
 
 <!-- INNOVATION -->
 <section id="innovation">
-<h2 class="section-title">💡 Innovation & Tech Ideas</h2>
-<div class="cards">
-  <div class="card">
-    <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d" alt="Innovation">
-    <div>
-      <h3>Creative Innovation</h3>
-      <p>Discover startups, problem-solving ideas, AI innovation, and digital transformation.</p>
-      <a href="https://www.techcrunch.com" target="_blank">Tech News</a>
-    </div>
+  <h2 class="section-title">💡 Innovation & Tech Ideas</h2>
+  <div class="post">
+    <p>Discover startups, problem-solving ideas, AI innovation, and digital transformation.</p>
+    <a href="https://techcrunch.com" target="_blank">Read Tech News</a>
   </div>
-</div>
 </section>
 
-<!-- CODING -->
+<!-- CODING + CONTENTFUL BLOG -->
 <section id="coding">
-<h2 class="section-title">💻 Coding & Development</h2>
-<div class="cards">
-  <div class="card">
-    <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97" alt="Coding">
-    <div>
-      <h3>Learn to Code</h3>
-      <p>HTML, CSS, JavaScript, Python, Android & Web Development.</p>
-      <a href="https://www.freecodecamp.org" target="_blank">Start Coding</a>
-    </div>
-  </div>
-</div>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f5f5f5;
-      padding: 20px;
-    }
-    .post {
-      background: #fff;
-      padding: 15px;
-      margin-bottom: 15px;
-      border-radius: 8px;
-    }
-    video {
-      width: 100%;
-      margin-top: 10px;
-      border-radius: 6px;
-    }
-  </style>
-</head>
-<body>
+  <h2 class="section-title">💻 Coding & Development</h2>
+  <p>HTML, CSS, JavaScript, Python, Android & Web Development.</p>
 
-  <h1>📘 Medtech Blog</h1>
+  <!-- CMS CONTENT -->
   <div id="posts">Loading posts...</div>
-  <h2 id="video-title"></h2>
-
-<video
-  id="video-player"
-  controls
-  width="100%"
-  style="max-width: 700px; background: black;"
->
-  Your browser does not support the video tag.
-</video>
-</section>
-   < section id="code-studio">
-  <h2 class="section-title">🧠 MEDTECH Code Studio</h2>
-  <p>
-    A safe coding environment for learners to practice HTML, CSS, and JavaScript.
-    Build projects, experiment freely, and grow into a professional developer.
-  </p>
-
-  <div class="studio">
-
-    <!-- Tabs -->
-    <div class="tabs">
-      <button onclick="openTab('html')">HTML</button>
-      <button onclick="openTab('css')">CSS</button>
-      <button onclick="openTab('js')">JavaScript</button>
-    </div>
-
-    <!-- Editors -->
-    <textarea id="html" class="editor">
-<h2>Hello MEDTECH 👋</h2>
-<p>I am learning to code.</p>
-<button onclick="sayHi()">Click Me</button>
-    </textarea>
-
-    <textarea id="css" class="editor hidden">
-body{
-  background:#0b1020;
-  color:white;
-  font-family:Arial;
-  text-align:center;
-}
-button{
-  padding:10px 20px;
-  background:#00eaff;
-  border:none;
-  border-radius:6px;
-}
-    </textarea>
-
-    <textarea id="js" class="editor hidden">
-function sayHi(){
-  alert("Keep learning 🚀");
-}
-    </textarea>
-
-    <!-- Controls -->
-    <div class="controls">
-      <button onclick="runStudio()">▶ Run</button>
-      <button onclick="saveStudio()">💾 Save</button>
-      <button onclick="resetStudio()">♻ Reset</button>
-      <button onclick="downloadProject()">⬇ Download</button>
-    </div>
-
-    <!-- Output -->
-    <iframe id="studioOutput"></iframe>
-
-    <!-- Learning Tips -->
-    <div class="tips">
-      💡 Tip: Edit HTML for structure, CSS for design, JavaScript for actions.
-    </div>
-
-    <!-- Challenges -->
-    <div class="challenges">
-      <h3>🎯 Practice Challenges</h3>
-      <ul>
-        <li>Create a button that changes color</li>
-        <li>Center text on the page</li>
-        <li>Add an alert message</li>
-        <li>Create a mini card UI</li>
-      </ul>
-    </div>
-
-  </div>
 </section>
 
 <!-- COMMUNICATION -->
 <section id="communication">
-<h2 class="section-title">🌐 Communication Platform</h2>
-<div class="cards">
-  <div class="card">
-    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c" alt="Communication">
-    <div>
-      <h3>Connect & Collaborate</h3>
-      <p>Chat, share ideas, collaborate on projects, and build communities.</p>
-      <a href="https://discord.com" target="_blank">Join Communities</a>
-    </div>
+  <h2 class="section-title">🌐 Communication Platform</h2>
+  <div class="post">
+    <p>Chat, share ideas, collaborate on projects, and build communities.</p>
+    <a href="https://discord.com" target="_blank">Join Communities</a>
   </div>
-</div>
 </section>
 
 <!-- NEW TECHNOLOGIES -->
 <section id="tech">
-<h2 class="section-title">🚀 New & Emerging Technologies</h2>
-<div class="cards">
-  <div class="card">
-    <img src="https://images.unsplash.com/photo-1535223289827-42f1e9919769" alt="AI">
-    <div>
-      <h3>Latest Technologies</h3>
-      <p>AI, Robotics, Blockchain, Web3, Cloud Computing & Cybersecurity.</p>
-      <a href="https://www.futurepedia.io" target="_blank">Explore Tech</a>
-    </div>
+  <h2 class="section-title">🚀 New & Emerging Technologies</h2>
+  <div class="post">
+    <p>AI, Robotics, Blockchain, Web3, Cloud Computing & Cybersecurity.</p>
+    <a href="https://www.futurepedia.io" target="_blank">Explore Technologies</a>
   </div>
-</div>
 </section>
 
 <!-- FREELANCING -->
 <section id="freelance">
-<h2 class="section-title">🧑‍💼 Freelancing & Lancing Hub</h2>
-<div class="cards">
-  <div class="card">
-    <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d" alt="Freelancing">
-    <div>
-      <h3>Work & Earn</h3>
-      <p>Access freelancing platforms, offer services, and earn using your tech skills.</p>
-      <a href="https://www.fiverr.com" target="_blank">Fiverr</a><br>
-      <a href="https://www.upwork.com" target="_blank">Upwork</a>
-    </div>
+  <h2 class="section-title">🧑‍💼 Freelancing Hub</h2>
+  <div class="post">
+    <p>Earn money using your tech skills.</p>
+    <a href="https://www.fiverr.com" target="_blank">Fiverr</a><br>
+    <a href="https://www.upwork.com" target="_blank">Upwork</a>
   </div>
-</div>
 </section>
-  <!-- MONETIZATION SECTION -->
+
+<!-- MONETIZATION -->
 <section id="monetization">
-<h2 class="section-title">💰 Monetization & Earnings</h2>
+  <h2 class="section-title">💰 Monetization & Earnings</h2>
 
-<div class="cards">
-
-  <!-- ADS -->
-  <div class="card">
-    <img src="https://images.unsplash.com/photo-1556742044-3c52d6e88c62" alt="Ads">
-    <div>
-      <h3>Website Ads</h3>
-      <p>Earn money when users visit MEDTECH using Google AdSense and banner ads.</p>
-      <a href="https://www.google.com/adsense/start/" target="_blank">Enable Ads</a>
-    </div>
+  <div class="post">
+    <h3>Website Ads</h3>
+    <p>Earn through Google AdSense and banner ads.</p>
   </div>
 
-  <!-- PREMIUM -->
-  <div class="card">
-    <img src="https://images.unsplash.com/photo-1556740738-b6a63e27c4df" alt="Premium">
-    <div>
-      <h3>Premium Membership</h3>
-      <p>Users pay for premium coding tutorials, tools, mentorship & exclusive content.</p>
-      <a href="#">Coming Soon</a>
-    </div>
+  <div class="post">
+    <h3>Premium Membership</h3>
+    <p>Paid tutorials, mentorship, and exclusive tools.</p>
   </div>
 
-  <!-- AFFILIATE -->
-  <div class="card">
-    <img src="https://images.unsplash.com/photo-1605902711622-cfb43c44367f" alt="Affiliate">
-    <div>
-      <h3>Affiliate Marketing</h3>
-      <p>Earn commissions by promoting tech tools, courses & platforms.</p>
-      <a href="https://affiliate-program.amazon.com/" target="_blank">Amazon Affiliate</a><br>
-      <a href="https://www.coursera.org/affiliate" target="_blank">Coursera Affiliate</a>
-    </div>
+  <div class="post">
+    <h3>Affiliate Marketing</h3>
+    <p>Earn commissions promoting tech tools and courses.</p>
   </div>
 
-  
-
-  <!-- FREELANCE COMMISSION -->
-  <div class="card">
-    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f" alt="Commission">
-    <div>
-      <h3>Freelancing Commission</h3>
-      <p>MEDTECH earns a percentage from jobs completed through the platform.</p>
-      <a href="#freelance">View Freelance Hub</a>
-    </div>
+  <div class="post">
+    <h3>Freelancing Commission</h3>
+    <p>MEDTECH earns from jobs completed through the platform.</p>
   </div>
-  <
-  <section id="code-lab">
-  <h2 class="section-title">🧪 MEDTECH Code Practice Lab</h2>
-  <p>
-    Practice coding directly in your browser. Write HTML, CSS, or JavaScript
-    and see results instantly. This lab is designed to help learners grow
-    confidence and skills.
-  </p>
+</section>
 
-  <div class="code-lab">
+<!-- AI ASSISTANT -->
+<button id="aiBtn">🤖</button>
 
-    <textarea id="codeInput">
-<!-- Try editing this code -->
+<div id="aiBox">
+  <div id="aiHeader">MEDTECH AI</div>
+  <div id="aiMessages"></div>
+  <input id="aiInput" placeholder="Ask something...">
+  <button onclick="sendAI()">Send</button>
+</div>
 
+<!-- FOOTER -->
+<footer>
+  <p>© 2025 MEDTECH | Empowering Technology & Innovation</p>
+  <a href="privacy.html">Privacy</a> |
+  <a href="terms.html">Terms</a> |
+  <a href="about.html">About</a>
+</footer>
 
-
-<body>
-  <h2>Hello MEDTECH 👋</h2>
-  <p>I am learning to code!</p>
-  <button onclick="alert('Keep learning 🚀')">Click me</button>
+<script src="main.js"></script>
 </body>
 </html>
-    </textarea>
-
-    <button onclick="runCode()">▶ Run Code</button>
-
-    <iframe id="codeOutput"></iframe>
-
-  </div>
-</section>
-
-</div>
-</section>
-  <section id="profile" class="hidden">
-  <h2>👤 Learner Profile</h2>
-  <p><strong>Name:</strong> <span id="profileName"></span></p>
-  <p><strong>Level:</strong> Beginner</p>
-
-  <h3>📊 Progress</h3>
-  <progress value="30" max="100"></progress>
-
-  <h3>🏅 Badges</h3>
-  <div class="badges">
-    <span>✅ First Run</span>
-    <span>🎨 Styled Page</span>
-  </div>
-</section>
-  
-    <p id="message" style="color:#ff8080;text-align:center;"></p>
-  </div>
-</div>
-
-<div id="welcomeBox" style="display:none;text-align:center;">
-  <h3>Welcome, <span id="userNameDisplay"></span> 👋</h3>
-  <button onclick="logout()" style="padding:10px 20px;">Logout</button>
-</div>
-
-
-<div style="background:#1e2440;color:#00ff99;text-align:center;padding:15px;margin:15px 0;border-radius:8px;">
-  🔹 Footer Ad Placeholder 🔹
-</div>
-    <footer>
-    <p> © 2025 MEDTECH | Empowering Technology & Innovation</p>
-  <a href="privacy.html">Privacy Policy</a> |
-<a href="terms.html">Terms of Service</a> |
-<a href="about.html">About</a>
-  </footer>
-</body>
-</html>
-<script>
-let slides = document.querySelectorAll(".slide");
-let current = 0;
-
-function showSlide(){
-  slides.forEach(slide => slide.classList.remove("active"));
-  slides[current].classList.add("active");
-  current = (current + 1) % slides.length;
-}
-
-setInterval(showSlide, 3000);
-
-function runCode(){
-  const code = document.getElementById("codeInput").value;
-  const output = document.getElementById("codeOutput");
-
-  output.srcdoc = code;
-}
-
-let activeTab = "html";
-
-function openTab(tab){
-  document.querySelectorAll(".editor").forEach(e => e.classList.add("hidden"));
-  document.getElementById(tab).classList.remove("hidden");
-  activeTab = tab;
-}
-
-function runStudio(){
-  const html = document.getElementById("html").value;
-  const css = `<style>${document.getElementById("css").value}</style>`;
-  const js = `<script>${document.getElementById("js").value}<\/script>`;
-  document.getElementById("studioOutput").srcdoc = html + css + js;
-}
-
-function saveStudio(){
-  localStorage.setItem("medtech-html", html.value);
-  localStorage.setItem("medtech-css", css.value);
-  localStorage.setItem("medtech-js", js.value);
-  alert("Code saved ✔");
-}
-
-function resetStudio(){
-  location.reload();
-}
-
-function downloadProject(){
-  const content =
-    document.getElementById("html").value +
-    "\n<style>\n" +
-    document.getElementById("css").value +
-    "\n</style>\n<script>\n" +
-    document.getElementById("js").value +
-    "\n<script>";
-
-  const blob = new Blob([content], {type:"text/html"});
-  const a = document.createElement("a");
-  a.href = URL.createObjectURL(blob);
-  a.download = "medtech-project.html";
-  a.click();
-}
-
-window.onload = () => {
-  if(localStorage.getItem("medtech-html")){
-    html.value = localStorage.getItem("medtech-html");
-    css.value = localStorage.getItem("medtech-css");
-    js.value = localStorage.getItem("medtech-js");
-  }
-}
-    
-const aiBtn = document.getElementById("aiBtn");
-const aiBox = document.getElementById("aiBox");
-
-aiBtn.onclick = () => {
-  aiBox.style.display = aiBox.style.display === "block" ? "none" : "block";
-};
-
-function sendAI(){
-  const input = document.getElementById("aiInput");
-  const msgBox = document.getElementById("aiMessages");
-  const userText = input.value.toLowerCase();
-
-  if(!userText) return;
-
-  msgBox.innerHTML += `<p><b>You:</b> ${input.value}</p>`;
-
-  let reply = "I'm here to help you learn technology and grow your skills.";
-
-  if(userText.includes("coding")){
-    reply = "Start with HTML, CSS, then JavaScript. Practice daily using MEDTECH coding resources.";
-  }
-  else if(userText.includes("ict")){
-    reply = "ICT includes networking, data communication, and digital systems. Check the ICT section above.";
-  }
-  else if(userText.includes("freelance") || userText.includes("money")){
-    reply = "Learn one skill well, build projects, then start freelancing on Fiverr or Upwork.";
-  }
-  else if(userText.includes("ai")){
-    reply = "AI is the future. Learn basics like machine learning, then tools like ChatGPT and automation.";
-  }
-  else if(userText.includes("help")){
-    reply = "Tell me what you want to learn today: coding, ICT, innovation, or freelancing.";
-  }
-
-  setTimeout(()=>{
-    msgBox.innerHTML += `<p style="color:#00ff99;"><b>AI:</b> ${reply}</p>`;
-    msgBox.scrollTop = msgBox.scrollHeight;
-  },500);
-
-  input.value = "";
-}
-const SPACE_ID = "wh2jduuotak5";
-const ACCESS_TOKEN = "-LgprZeoLtz64wCTTjVdFx1RrWA5C11ZtEk4UdrNW7g";
-
-fetch(`https://cdn.contentful.com/spaces/${SPACE_ID}/environments/master/entries?access_token=${ACCESS_TOKEN}`)
-  .then(res => res.json())
-  .then(data => {
-    const container = document.getElementById("posts");
-
-    data.items.forEach(item => {
-      if (item.fields.title) {
-        const post = document.createElement("div");
-        post.innerHTML = `<h2>${item.fields.title}</h2>`;
-        container.appendChild(post);
-      }
-    });
-  });
-fetch("https://cdn.contentful.com/spaces/wh2jduuotak5/environments/master/entries?access_token="-LgprZeoLtz64wCTTjVdFx1RrWA5C11ZtEk4UdrNW7g")
-  .then(res => res.json())
-  .then(data => {
-    const container = document.getElementById("posts");
-
-    data.items.forEach(item => {
-      if (item.fields.title) {
-        const post = document.createElement("h2");
-        post.textContent = item.fields.title;
-        container.appendChild(post);
-      }
-    });
-  });
-
-
-  const SPACE_ID = "wh2jduuotak5";
-  const ACCESS_TOKEN = "-LgprZeoLtz64wCTTjVdFx1RrWA5C11ZtEk4UdrNW7g";
-
-  const API_URL = `https://cdn.contentful.com/spaces/${SPACE_ID}/environments/master/entries?access_token=${ACCESS_TOKEN}&include=2`;
-
-  fetch(API_URL)
-    .then(res => res.json())
-    .then(data => {
-      const container = document.getElementById("posts");
-      container.innerHTML = "";
-
-      // 1️⃣ Map all assets
-      const assets = {};
-      if (data.includes && data.includes.Asset) {
-        data.includes.Asset.forEach(asset => {
-          assets[asset.sys.id] = asset.fields.file.url;
-        });
-      }
-
-      // 2️⃣ Render posts
-      data.items.forEach(item => {
-        const div = document.createElement("div");
-        div.className = "post";
-
-        // Title
-        if (item.fields.title) {
-          const h2 = document.createElement("h2");
-          h2.textContent = item.fields.title;
-          div.appendChild(h2);
-        }
-
-        // Video (IMPORTANT PART)
-        if (item.fields.video) {
-          const videoId = item.fields.video.sys.id;
-          const videoUrl = assets[videoId];
-
-          if (videoUrl) {
-            const video = document.createElement("video");
-            video.src = "https:" + videoUrl;
-            video.controls = true;
-            video.style.width = "100%";
-            div.appendChild(video);
-          }
-        }
-
-        container.appendChild(div);
-      });
-    })
-    .catch(err => {
-      console.error(err);
-      document.getElementById("posts").innerHTML = "❌ Failed to load content";
-    });
-// Title
-document.getElementById("video-title").textContent =
-  post.fields.title;
-
-// Video
-const videoPlayer = document.getElementById("video-player");
-
-const videoUrl =
-  "https:" + post.fields.video.fields.file.url;
-
-videoPlayer.src = videoUrl;
-
-  posts.forEach(post => {
-  const title = document.createElement("h2");
-  title.textContent = post.fields.title;
-
-  const video = document.createElement("video");
-  video.controls = true;
-  video.style.width = "100%";
-
-  const source = document.createElement("source");
-  source.src = "https:" + post.fields.video.fields.file.url;
-  source.type = "video/mp4";
-
-  video.appendChild(source);
-
-  document.body.appendChild(title);
-  document.body.appendChild(video);
-});
-</script>
-        
