@@ -411,9 +411,32 @@ iframe{
     </div>
   </div>
 </div>
-  <div id="posts"></div>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      padding: 20px;
+    }
+    .post {
+      background: #fff;
+      padding: 15px;
+      margin-bottom: 15px;
+      border-radius: 8px;
+    }
+    video {
+      width: 100%;
+      margin-top: 10px;
+      border-radius: 6px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>📘 Medtech Blog</h1>
+  <div id="posts">Loading posts...</div>
+  
 </section>
-    section id="code-studio">
+   < section id="code-studio">
   <h2 class="section-title">🧠 MEDTECH Code Studio</h2>
   <p>
     A safe coding environment for learners to practice HTML, CSS, and JavaScript.
@@ -788,6 +811,52 @@ fetch("https://cdn.contentful.com/spaces/wh2jduuotak5/environments/master/entrie
       }
     });
   });
+
+  const SPACE_ID = "wh2jduuotak5";
+    const ACCESS_TOKEN = "-LgprZeoLtz64wCTTjVdFx1RrWA5C11ZtEk4UdrNW7g";
+
+    const API_URL = `https://cdn.contentful.com/spaces/${SPACE_ID}/environments/master/entries?access_token=${ACCESS_TOKEN}&include=1`;
+
+    fetch(API_URL)
+      .then(res => res.json())
+      .then(data => {
+        const container = document.getElementById("posts");
+        container.innerHTML = "";
+
+        // map assets (video, images)
+        const assets = {};
+        if (data.includes && data.includes.Asset) {
+          data.includes.Asset.forEach(asset => {
+            assets[asset.sys.id] = asset.fields.file.url;
+          });
+        }
+
+        data.items.forEach(item => {
+          const div = document.createElement("div");
+          div.className = "post";
+
+          // title
+          if (item.fields.title) {
+            const title = document.createElement("h2");
+            title.textContent = item.fields.title;
+            div.appendChild(title);
+          }
+
+          // coding text
+          if (item.fields.coding) {
+            const p = document.createElement("p");
+            p.textContent = item.fields.coding;
+            div.appendChild(p);
+          }
+
+          div && container.appendChild(div);
+        });
+      })
+      .catch(err => {
+        document.getElementById("posts").innerHTML =
+          "❌ Failed to load content";
+        console.error(err);
+      });
 
 </script>
         
