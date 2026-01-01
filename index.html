@@ -775,7 +775,19 @@ fetch(`https://cdn.contentful.com/spaces/${SPACE_ID}/environments/master/entries
       }
     });
   });
+fetch("https://cdn.contentful.com/spaces/wh2jduuotak5/environments/master/entries?access_token="-LgprZeoLtz64wCTTjVdFx1RrWA5C11ZtEk4UdrNW7g")
+  .then(res => res.json())
+  .then(data => {
+    const container = document.getElementById("posts");
 
+    data.items.forEach(item => {
+      if (item.fields.title) {
+        const post = document.createElement("h2");
+        post.textContent = item.fields.title;
+        container.appendChild(post);
+      }
+    });
+  });
 
 </script>
         
