@@ -58,7 +58,72 @@
 <section id="coding">
   <h2 class="section-title">💻 Coding & Development</h2>
   <p>HTML, CSS, JavaScript, Python, Android & Web Development.</p>
+<a href="https://strikingly.com" target="_blank">learn coding</a>
+  <!-- CODE STUDIO -->
+<section id="code-studio">
+  <h2 class="section-title">🧠 MEDTECH Code Studio</h2>
+  <p>Edit HTML, CSS, JavaScript, Python, or C++ and see live results!</p>
 
+  <div class="studio">
+    <!-- Tabs -->
+    <div class="tabs">
+      <button onclick="openTab('html')">HTML</button>
+      <button onclick="openTab('css')">CSS</button>
+      <button onclick="openTab('js')">JavaScript</button>
+      <button onclick="openTab('python')">Python</button>
+      <button onclick="openTab('cpp')">C++</button>
+    </div>
+
+    <!-- Editors -->
+    <textarea id="html" class="editor">
+<h2>Hello MEDTECH 👋</h2>
+<p>I am learning to code!</p>
+<button onclick="sayHi()">Click Me</button>
+    </textarea>
+
+    <textarea id="css" class="editor hidden">
+body { background:#0b1020; color:white; font-family:Arial; text-align:center; }
+button { padding:10px 20px; background:#00eaff; border:none; border-radius:6px; }
+    </textarea>
+
+    <textarea id="js" class="editor hidden">
+function sayHi() { alert("Keep learning 🚀"); }
+    </textarea>
+
+    <textarea id="python" class="editor hidden">
+# Python code here
+print("Hello MEDTECH! 🚀")
+for i in range(5):
+    print("Line", i+1)
+    </textarea>
+
+    <textarea id="cpp" class="editor hidden">
+// C++ code here
+#include <iostream>
+using namespace std;
+int main() {
+    cout << "Hello MEDTECH! 🚀" << endl;
+    return 0;
+}
+    </textarea>
+
+    <!-- Controls -->
+    <div class="controls">
+      <button onclick="runStudio()">▶ Run</button>
+      <button onclick="saveStudio()">💾 Save</button>
+      <button onclick="resetStudio()">♻ Reset</button>
+      <button onclick="downloadProject()">⬇ Download</button>
+    </div>
+
+    <!-- Output -->
+    <iframe id="studioOutput"></iframe>
+    <pre id="codeOutputText" style="background:#151b3d; color:#00ff99; padding:10px; margin-top:10px; display:none; height:200px; overflow:auto;"></pre>
+  </div>
+</section>
+
+<!-- Skulpt (Python in browser) -->
+<script src="https://cdn.jsdelivr.net/npm/skulpt@1.2.0/skulpt.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/skulpt@1.2.0/skulpt-stdlib.js"></script>
   <!-- CMS CONTENT -->
   <div id="posts">Loading posts...</div>
 </section>
