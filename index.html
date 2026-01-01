@@ -812,51 +812,59 @@ fetch("https://cdn.contentful.com/spaces/wh2jduuotak5/environments/master/entrie
     });
   });
 
+
   const SPACE_ID = "wh2jduuotak5";
-    const ACCESS_TOKEN = "-LgprZeoLtz64wCTTjVdFx1RrWA5C11ZtEk4UdrNW7g";
+  const ACCESS_TOKEN = "-LgprZeoLtz64wCTTjVdFx1RrWA5C11ZtEk4UdrNW7g";
 
-    const API_URL = `https://cdn.contentful.com/spaces/${SPACE_ID}/environments/master/entries?access_token=${ACCESS_TOKEN}&include=1`;
+  const API_URL = `https://cdn.contentful.com/spaces/${SPACE_ID}/environments/master/entries?access_token=${ACCESS_TOKEN}&include=2`;
 
-    fetch(API_URL)
-      .then(res => res.json())
-      .then(data => {
-        const container = document.getElementById("posts");
-        container.innerHTML = "";
+  fetch(API_URL)
+    .then(res => res.json())
+    .then(data => {
+      const container = document.getElementById("posts");
+      container.innerHTML = "";
 
-        // map assets (video, images)
-        const assets = {};
-        if (data.includes && data.includes.Asset) {
-          data.includes.Asset.forEach(asset => {
-            assets[asset.sys.id] = asset.fields.file.url;
-          });
+      // 1️⃣ Map all assets
+      const assets = {};
+      if (data.includes && data.includes.Asset) {
+        data.includes.Asset.forEach(asset => {
+          assets[asset.sys.id] = asset.fields.file.url;
+        });
+      }
+
+      // 2️⃣ Render posts
+      data.items.forEach(item => {
+        const div = document.createElement("div");
+        div.className = "post";
+
+        // Title
+        if (item.fields.title) {
+          const h2 = document.createElement("h2");
+          h2.textContent = item.fields.title;
+          div.appendChild(h2);
         }
 
-        data.items.forEach(item => {
-          const div = document.createElement("div");
-          div.className = "post";
+        // Video (IMPORTANT PART)
+        if (item.fields.video) {
+          const videoId = item.fields.video.sys.id;
+          const videoUrl = assets[videoId];
 
-          // title
-          if (item.fields.title) {
-            const title = document.createElement("h2");
-            title.textContent = item.fields.title;
-            div.appendChild(title);
+          if (videoUrl) {
+            const video = document.createElement("video");
+            video.src = "https:" + videoUrl;
+            video.controls = true;
+            video.style.width = "100%";
+            div.appendChild(video);
           }
+        }
 
-          // coding text
-          if (item.fields.coding) {
-            const p = document.createElement("p");
-            p.textContent = item.fields.coding;
-            div.appendChild(p);
-          }
-
-          div && container.appendChild(div);
-        });
-      })
-      .catch(err => {
-        document.getElementById("posts").innerHTML =
-          "❌ Failed to load content";
-        console.error(err);
+        container.appendChild(div);
       });
+    })
+    .catch(err => {
+      console.error(err);
+      document.getElementById("posts").innerHTML = "❌ Failed to load content";
+    });
 
 </script>
         
