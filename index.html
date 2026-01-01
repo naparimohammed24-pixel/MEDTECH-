@@ -434,7 +434,16 @@ iframe{
 
   <h1>📘 Medtech Blog</h1>
   <div id="posts">Loading posts...</div>
-  
+  <h2 id="video-title"></h2>
+
+<video
+  id="video-player"
+  controls
+  width="100%"
+  style="max-width: 700px; background: black;"
+>
+  Your browser does not support the video tag.
+</video>
 </section>
    < section id="code-studio">
   <h2 class="section-title">🧠 MEDTECH Code Studio</h2>
@@ -865,6 +874,34 @@ fetch("https://cdn.contentful.com/spaces/wh2jduuotak5/environments/master/entrie
       console.error(err);
       document.getElementById("posts").innerHTML = "❌ Failed to load content";
     });
+// Title
+document.getElementById("video-title").textContent =
+  post.fields.title;
 
+// Video
+const videoPlayer = document.getElementById("video-player");
+
+const videoUrl =
+  "https:" + post.fields.video.fields.file.url;
+
+videoPlayer.src = videoUrl;
+
+  posts.forEach(post => {
+  const title = document.createElement("h2");
+  title.textContent = post.fields.title;
+
+  const video = document.createElement("video");
+  video.controls = true;
+  video.style.width = "100%";
+
+  const source = document.createElement("source");
+  source.src = "https:" + post.fields.video.fields.file.url;
+  source.type = "video/mp4";
+
+  video.appendChild(source);
+
+  document.body.appendChild(title);
+  document.body.appendChild(video);
+});
 </script>
         
